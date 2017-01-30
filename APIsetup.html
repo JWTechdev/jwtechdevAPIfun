@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JavaScript API Boiler Plate</title>
+</head>
+<body>
+<div id="output"></div>
+<script type="text/javascript">
+	var output = document.getElementById("output");
+	function myAPIfuntion () {
+		if(this.readyState == 4 && this.status == 200) {
+			output.innerHTML = this.responseText;
+		}
+	}
+
+	var myRequest = new XMLHttpRequest();
+	myRequest.onreadystatechange = myAPIfuntion;
+	myRequest.open("GET","INSERT FILE OR URL HERE");
+	myRequest.send();
+	console.log('myRequest');
+</script>
+</body>
+</html>
